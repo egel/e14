@@ -3,11 +3,12 @@
 class Page
 {
 
-	protected $_short_name ="Not set yet";
+  // To są domyślne ustawienia zmiennych
   protected $_title      ="Not set yet";
   protected $_header     ="Not set yet";
   protected $_footer     ="Not set yet";
   protected $_body       ="Not set yet";
+  protected $_mainmenu   ="Not set yet";
 
   protected $_meta_description = "";
   protected $_meta_keywords = "";
@@ -18,19 +19,19 @@ class Page
 	 */
 	public function __construct($title, $body, $show_now=FALSE)
   {
-    // zwykłe przypisanie
+    // zwykłe przypisanie tytułu
     $this->_title = $title;
 
-    // tworzenie instancji obiektu menu i dopisanie go do zmiennej body
+    // tworzenie instancji obiektu menu i dopisanie go do zmiennej _mainmenu
     $menu = new Menu();
-    $this->_body = $menu->get_menus();
+    $this->_mainmenu = $menu->get_menus();
 
-    $this->_body .= $body;
+    // dopisanie informacji z zmiennej $body otrzmanej z zewnątrz,
+    // do zmiennej wewnętrznej $_body w klasie Page
+    $this->_body = $body;
 
-    // przypisanie wartości zwracanej przez funkcje
-    $this->_header = $this->get_header();
-    $this->_footer = $this->get_footer();
 
+    // Czy strona ma odrazu się wyrenderować na ekranie
     if ($show_now === TRUE)
     {
       $this->render_page();
@@ -47,7 +48,7 @@ class Page
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
+      <meta name="description" content="'.$this->_meta_description.'">
       <meta name="author" content="'.$this->_meta_author.'">
       <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
@@ -62,14 +63,16 @@ class Page
 
   public function get_body()
   {
-    return '
+    $tresc = '
     <div id="naglowek-strony">
     </div>
 
     <div id="menu-nawigacyjne">
+    '.$this->_mainmenu.'
     </div>
 
     <div id="tresc-strony">
+    '.$this->_body.'
     </div>
 
     <div id="nowosci">
@@ -78,6 +81,8 @@ class Page
     <div id="pasek-statusu">
     </div>
     ';
+
+    return $tresc;
   }
 
   public function get_footer()
@@ -87,8 +92,6 @@ class Page
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
-        <script src="../../assets/js/docs.min.js"></script>
       </body>
     </html>
     ';
@@ -97,9 +100,9 @@ class Page
 
   public function render_page()
   {
-    echo $this->_header;
-    echo $this->_body;
-    echo $this->_footer;
+    echo $this->get_header();
+    echo $this->get_body();
+    echo $this->get_footer();
   }
 }
 

@@ -3,6 +3,7 @@
 class Menu
 {
 
+  // Lista stron jakie będą na stronach
 	protected $pages = array( "glowna" => "Strona Główna",
                             "gazetka" => "Gazetka Promocyjna",
                             "kontakt" => "Strona Kontaktowa");

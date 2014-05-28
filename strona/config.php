@@ -1,6 +1,8 @@
 <?php
 
 define('MEDIA_BASEDIR','images/');
+define('JS_BASEDIR','js/');
+define('CSS_BASEDIR','css/');
 
 define('DB_HOST','localhost');
 define('DB_USER','root');
