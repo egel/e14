@@ -46,7 +46,7 @@ Happy hacking :)
 If shows you somthing similar to this error that presents below, the problem is probably with files owners or files rights.
 
 ```
-Warning: include_once(/home/user/public_html/e14/methods.php): failed to open stream: Permission denied in /home/user/public_html/e14/index.php on line 14 Warning: include_once(): Failed opening 'methods.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/user/public_html/e14/index.php on line 14 Fatal error: Call to undefined function connect_db() in /home/user/public_html/e14/index.php on line 30
+Warning: include_once(/home/user/public_html/e14/strona/methods.php): failed to open stream: Permission denied in /home/user/public_html/e14/strona/index.php on line 14 Warning: include_once(): Failed opening 'methods.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/user/public_html/e14/strona/index.php on line 14 Fatal error: Call to undefined function connect_db() in /home/user/public_html/e14/strona/index.php on line 30
 ```
 
 **Solution**
@@ -55,15 +55,15 @@ Warning: include_once(/home/user/public_html/e14/methods.php): failed to open st
   * Files should be for example with 664 and folders with 775 rights.
 
 ```bash
-$ find ~/public_html/php-sql-sandbox -type d -exec chmod 755 {} \;
-$ find ~/public_html/php-sql-sandbox -type f -exec chmod 644 {} \;
+$ find ~/public_html/e14 -type d -exec chmod 755 {} \;
+$ find ~/public_html/e14 -type f -exec chmod 644 {} \;
 ```
 
 ### Database error connection
 If similar problem to this present below appears then try to solve it by solution also present below this code.
 
 ```
-Warning: mysqli::mysqli(): (42000/1049): Unknown database 'e14-database' in /home/maciek/public_html/e14/methods.php on line 20 Blad: Polaczenie z baza danych nie powiodlo sie.
+Warning: mysqli::mysqli(): (42000/1049): Unknown database 'e14-database' in /home/user/public_html/e14/strona/methods.php on line 20 Blad: Polaczenie z baza danych nie powiodlo sie.
 MySQLi connect error: Unknown database 'e14-database'
 MySQLi connect errno: 1049
 ```
@@ -71,8 +71,8 @@ MySQLi connect errno: 1049
 ####Solution
 This problem is caused by wrong database name or missing database.
 
-  * Check `DB_USER`, `DB_PASS` and `DB_NAME` global variables located in `config.php` file.
-  * If variables are correct then reload the database schema, then reload website [http://localhost/e14/](http://localhost/e14/)
+  * Check `DB_USER`, `DB_PASS` and `DB_NAME` global variables located in `strona/config.php` file.
+  * If variables are correct then reload the database schema, then reload website [http://localhost/e14/strona/](http://localhost/e14/strona/)
 
 
 ## TODO List
