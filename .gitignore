@@ -1,2 +1,8 @@
 ## Markdown compilations
 README.html
+
+## Unnesessary directories
+kosz/
+
+## Sublime workspace
+*.sublime-workspace
