@@ -40,7 +40,7 @@ mysql > source ~/public_html/e14/sql-database/e14-database.sql;
 Happy hacking :)
 
 
-## Trivial problems with launch project
+## Trivial problems with launch the project
 
 ### File owner or file rights
 If shows you somthing similar to this error that presents below, the problem is probably with files owners or files rights.
@@ -78,6 +78,12 @@ This problem is caused by wrong database name or missing database.
 ## TODO List
 
   * Add bootstrap 3 as main front-end framework
+
+
+## Issues
+If you notice some bugs or errors in this program, please go to [https://github.com/egel/e14/issues](https://github.com/egel/e14/issues) and report the problem or try to solve it by yourself ;)
+
+Thanks
 
 
 ## License
