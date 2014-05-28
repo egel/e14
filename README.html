@@ -1,0 +1,190 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>README</title></head><body><h1 id="php-sql-sandbox">PHP + SQL Sandbox</h1>
+<p>This is very simple sandbox for PHP + SQL developers who needs quick environment for test classes with MySQL database support.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Simple full OOP Project</li>
+<li>Auto-class loader</li>
+<li>Ad-hoc connection with exsisting local database</li>
+<li>Built-in example of usage</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Running server (ex: Apache, Nginx,... etc.).</li>
+<li>Installed and running MySQL server.</li>
+<li>Installed PHP interpreter.</li>
+</ul>
+<h2 id="install">Install</h2>
+<h2 id="install-project">Install project</h2>
+<ul>
+<li>Clone it using git</li>
+</ul>
+<pre><code class="bash">$ cd ~/public_html
+$ git clone git@github.com:egel/php-sql-sandbox.git
+</code></pre>
+
+<ul>
+<li>Or download it directly to your machine in one zipped file.</li>
+</ul>
+<h3 id="create-database">Create database</h3>
+<pre><code>$ mysql -u root -p
+mysql &gt; CREATE database `private_zoo` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql &gt; use private_zoo
+mysql &gt; source ~/public_html/php-sql-sandbox/sql-database/private_zoo_database.sql
+</code></pre>
+
+<p>Happy hacking :)</p>
+<h2 id="trivial-problems-with-launch-project">Trivial problems with launch project</h2>
+<h3 id="file-owner-or-file-rights">File owner or file rights</h3>
+<p>If shows you somthing similar to this error that presents below, the problem is probably with files owners or files rights.</p>
+<pre><code>Warning: include_once(/home/user/public_html/php-sql-sandbox/methods.php): failed to open stream: Permission denied in /home/user/public_html/php-sql-sandbox/index.php on line 14 Warning: include_once(): Failed opening 'methods.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/user/public_html/php-sql-sandbox/index.php on line 14 Fatal error: Call to undefined function connect_db() in /home/user/public_html/php-sql-sandbox/index.php on line 30
+</code></pre>
+
+<p><strong>Solution</strong></p>
+<ul>
+<li>Check by <code>ls -al</code> program owners and rights for files.</li>
+<li>Files should be for example with 664 and folders with 775 rights.</li>
+</ul>
+<pre><code class="bash">$ find ~/public_html/php-sql-sandbox -type d -exec chmod 755 {} \;
+$ find ~/public_html/php-sql-sandbox -type f -exec chmod 644 {} \;
+</code></pre>
+
+<h3 id="database-error-connection">Database error connection</h3>
+<pre><code>Warning: mysqli::mysqli(): (42000/1049): Unknown database 'szkola212' in /home/maciek/public_html/php-sql-sandbox/methods.php on line 20 Blad: Polaczenie z baza danych nie powiodlo sie.
+MySQLi connect error: Unknown database 'szkola212'
+MySQLi connect errno: 1049
+</code></pre>
+
+<p><strong> Solution </strong>
+This problem is caused by wrong database name or missing database.</p>
+<ul>
+<li>Check <code>$user</code>, <code>$pass</code> and <code>$database</code> variables in <code>connect_db</code> method located in <code>methods.php</code> file.</li>
+<li>If variables are correct then reload the database schema, then reload website <a href="http://localhost/php-sql-sandbox">http://localhost/php-sql-sandbox</a></li>
+</ul>
+<h2 id="todo-list">TODO List</h2>
+<ul>
+<li>Add bootstrap 3 as main front-end framework</li>
+</ul>
+<h2 id="license">License</h2>
+<p>Software under <a href="http://www.gnu.org/licenses/agpl-3.0.html">GNU AGPLv3</a> license.</p></body></html>
