@@ -38,13 +38,16 @@ try
       break;
 
     case 'gazetka':
-      // Strona poświęcona zoo
-      $page_gazetka = new Page("Strona z gazetką promocyjną", "bla bla bla", TRUE);
+      $galeria = new Gallery();
+      $string = $galeria->return_gallery_string();
+
+      $page_gazetka = new Page("Strona z gazetką promocyjną", $string, TRUE);
       break;
 
     case 'kontakt':
       $page_kontakt = new Page("Kontakt", "To jest strona z kontaktem");
       $page_kontakt->render_page();
+      break;
   }
 }
 catch(Exception $e)
