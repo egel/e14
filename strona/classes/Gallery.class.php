@@ -7,7 +7,7 @@ class Gallery {
         // Czy strona ma odrazu się wyrenderować na ekranie
         if ($show_now === TRUE)
         {
-            $this->render_page();
+            $this->render_gallery();
         }
         else
         {
@@ -35,7 +35,6 @@ class Gallery {
         {
             return false;
         }
-
     }
 
 
@@ -51,6 +50,11 @@ class Gallery {
             $all .= '</a>';
         }
         return $all;
+    }
+
+    public function render_gallery()
+    {
+        echo $this->return_gallery_string();
     }
 
 
