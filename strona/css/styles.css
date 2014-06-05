@@ -1,0 +1,65 @@
+body {
+    margin: 0px;
+    background-color: #e1e1e1;
+    }
+
+
+#naglowek-strony{
+    width: 100% ;
+    background-color: red ;
+    margin: 0px;
+    text-align: center;
+    min-height: 50px;
+    padding: 20px;
+    }
+
+
+#calosc{
+    width: 100%;
+    background-color: lime;
+    float: left;
+    min-height: 300px;
+    }
+
+#menu-nawigacyjne{
+    width: 25%;
+    background-color: yellow ;
+    float: left;
+    min-height: 500px;
+    }
+
+#nowosci{
+    width: 25%;
+    background-color: gray;
+    min-height: 500px;
+    float: right;
+    }
+
+#tresc-strony{
+    background: transparent;
+    color: black;
+    width:50%;
+    float:left;
+    }
+
+
+#pasek-statusu{
+    width: 100% ;
+    background-color: purple ;
+    min-height: 20px;
+    margin: 10px;
+    clear:both;
+    float: left;
+    text-align: center;
+    }
+
+.logo{
+    width: 20% ;
+    height: 20%;
+    background-color: black ;
+    color: white;
+    float: left;
+    padding: 15px;
+    }
+
+
